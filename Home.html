@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Enthusiasts</title>
-    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,31 +29,22 @@
 </head>
 <body class="bg-gradient-to-br from-purple-100 via-purple-200 to-violet-100 min-h-screen text-gray-800 p-4">
 
-    <!-- The main container now fills the entire width by removing the 'mx-auto' and 'shadow-2xl' classes. -->
     <div class="rounded-3xl overflow-hidden bg-white/80 backdrop-blur-sm">
 
-        <!-- Header Section. Font size and padding are responsive. -->
         <header class="text-center py-8 px-4 bg-purple-600 rounded-t-3xl text-white">
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Startup Enthusiasts</h1>
         </header>
 
-        <!-- Main Content with responsive padding. -->
         <main class="py-8 px-2 md:px-4">
 
-            <!-- Hero Image with Centered Buttons Section. Relative positioning for absolute overlay. -->
             <section class="relative my-8 mx-2 md:mx-4 rounded-3xl overflow-hidden card-glow">
-                <!-- image placeholder -->
                 <img src="1.png" alt="Event Landscape" class="w-full h-auto object-cover">
-                
-                <!-- The flex container with 'inset-0' and 'flex' classes ensures the content is both vertically and horizontally centered -->
+
                 <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-black bg-opacity-30">
-                    <!-- Flexbox for responsive button layout. Stacks on mobile, then becomes a row on larger screens. Removed width classes to ensure perfect centering. -->
                     <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-                        <!-- Startup Enthusiasts Button -->
                         <a href="https://forms.gle/Suc9qsnW4Dd3qFu26" class="text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full shadow-lg glow-button transition-all duration-300">
                             Startup Enthusiasts
                         </a>
-                        <!-- Well-being Button - now has the same styling as the other button -->
                         <a href="https://forms.gle/HXLNFGxpFYMem66K7" class="text-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full shadow-lg glow-button transition-all duration-300">
                             Well-being for Women Entrepreneurs
                         </a>
@@ -62,7 +52,6 @@
                 </div>
             </section>
 
-            <!-- Pitch Day Content Section. Responsive padding and margins. -->
             <section class="p-8 mx-2 md:mx-4 my-8 rounded-3xl shadow-xl bg-white/90 card-glow">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-700 mb-4">Pitch Day: Showcase Your Vision!</h2>
                 <p class="text-sm italic text-gray-500 mb-4">
@@ -96,7 +85,6 @@
                 </p>
             </section>
 
-            <!-- Pitch Generator Section -->
             <section class="p-8 mx-2 md:mx-4 my-8 rounded-3xl shadow-xl bg-white/90 card-glow">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-700 mb-4">✨ Pitch Generator</h2>
                 <p class="text-gray-600 mb-4">
@@ -115,7 +103,6 @@
                 </div>
             </section>
 
-            <!-- Well-being for Women Entrepreneurs Content Section. -->
             <section class="p-8 mx-2 md:mx-4 my-8 rounded-3xl shadow-xl bg-white/90 card-glow">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-700 mb-4">Well-being for Women Entrepreneurs</h2>
                 <p class="text-sm italic text-gray-500 mb-4">
@@ -155,14 +142,12 @@
                 <span class="text-xl font-bold ml-2">💖</span>
             </section>
 
-            <!-- YouTube Video Viewer Section. It is now a fixed video, not user-updatable. -->
             <section class="p-8 mx-2 md:mx-4 my-8 rounded-3xl shadow-xl bg-white/90 card-glow">
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-700 mb-4">Watch This</h2>
                 <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-4">
-                    <!-- Updated youtube video link -->
                     <iframe id="youtube-player"
                             class="absolute inset-0 w-full h-full"
-                            src="https://www.youtube.com/embed/AWl_DspdNsc" 
+                            src="https://www.youtube.com/embed/VtY_QU7z_TM" 
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -172,7 +157,6 @@
 
         </main>
 
-        <!-- Footer Section. Text size and spacing are responsive. -->
         <footer class="text-center py-6 px-2 md:px-4 bg-purple-900 text-white rounded-b-3xl">
             <h3 class="text-lg font-bold mb-2">Location & Contact</h3>
             <p class="mb-2">
@@ -187,8 +171,7 @@
         </footer>
 
     </div>
-    
-    <!-- JavaScript for the Pitch Generator -->
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const generateButton = document.getElementById('generate-pitch-btn');
@@ -207,7 +190,7 @@
                     const payload = { contents: chatHistory };
                     const apiKey = "";
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    
+
                     const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -222,9 +205,9 @@
                         }
                         throw new Error(`API error: ${response.status} ${response.statusText}`);
                     }
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
                         return result.candidates[0].content.parts[0].text;
                     } else {
@@ -257,10 +240,10 @@
                 pitchOutput.classList.remove('hidden');
                 generatedText.textContent = '';
                 loadingSpinner.classList.remove('hidden');
-                
+
                 // Call the LLM to generate the pitch
                 const pitch = await generatePitchWithRetry(idea);
-                
+
                 // Hide loading state and display the result
                 loadingSpinner.classList.add('hidden');
                 generatedText.textContent = pitch;
