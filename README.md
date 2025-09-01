@@ -1,1 +1,1 @@
-It's a site I have developed for promoting the evant that I am organizing so here's the link of the site: [Link](https://harikrishnan-web.github.io/Webpages/Home)
+I was sleeping peacefully and suddenly rithi the event cordinator called me at 11:30 Pm and asked me to develop a webpage for the event we are organizing in chennai, and instructed me to make it simple and add the video that we recorded in the morning so check out how that turned out [Event details](https://harikrishnan-web.github.io/Webpages/Home)
